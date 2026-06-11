@@ -411,10 +411,12 @@
       erro.textContent = msg;
     }
 
-    function abrirPdf(url){
-      if (!url) return;
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
+    
+function abrirPdf(id){
+  if (!id) return;
+  window.open(`https://coec-epb.github.io/CONSULTA_LAUDO/visualizar_laudo.html?id=${id}`, "_blank", "noopener,noreferrer");
+}
+
 
     function montarCard(item){
       const faixa = item.faixa_codigos
@@ -452,10 +454,12 @@
 
           ${faixa}
 
-          <button class="btn-pdf" type="button" onclick="abrirPdf('${item.pdf_url || ""}')">
-            <i class="bi bi-eye"></i>
-            Abrir PDF
-          </button>
+          
+<button class="btn-pdf" type="button" onclick="abrirPdf('${item.id}')">
+  <i class="bi bi-eye"></i>
+  Abrir PDF
+</button>
+
         </div>
       `;
     }
