@@ -437,22 +437,30 @@ function abrirPdf(id){
             </div>
           </div>
 
-          <div class="meta">
-            <div class="meta-item">
-              <i class="bi bi-calendar3"></i>
-              <span>${item.data_formatada || item.data || "Data não informada"}</span>
-            </div>
+         <div class="meta">
+  <div class="meta-item">
+    <i class="bi bi-calendar3"></i>
+    <span>${item.data_formatada || item.data || "Data não informada"}</span>
+  </div>
 
-            <div class="meta-item">
-              <i class="bi bi-geo-alt"></i>
-              <span>${item.localidade || item.regional || "Local não informado"}</span>
-            </div>
+  <div class="meta-item">
+    <i class="bi bi-geo-alt"></i>
+    <span>${item.localidade || item.regional || "Local não informado"}</span>
+  </div>
 
-            <div class="meta-item">
-              <i class="bi bi-tools"></i>
-              <span>${item.equipamentos || item.equipamento || "Equipamento não informado"}</span>
-            </div>
-          </div>
+  ${item.subestacao ? `
+  <div class="meta-item">
+    <i class="bi bi-lightning-charge"></i>
+    <span>SE ${item.subestacao}</span>
+  </div>
+  ` : ""}
+
+  <div class="meta-item">
+    <i class="bi bi-tools"></i>
+    <span>${item.equipamentos || item.equipamento || "Equipamento não informado"}</span>
+  </div>
+</div>
+
 
           ${faixa}
 
